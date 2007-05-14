@@ -1,11 +1,12 @@
 Summary:	OpenVZ template management tools
+Summary(pl.UTF-8):	Narzędzia do zarządzania szablonami OpenVZ
 Name:		vzpkg
 Version:	2.7.0
 Release:	18
-Source0:	http://download.openvz.org/template/utils/vzpkg/2.7.0-18/src/%{name}-%{version}-18.tar.bz2
-# Source0-md5:	3ce22962f7b1c82252948e7365ebc89f
 License:	QPL
 Group:		Applications/System
+Source0:	http://download.openvz.org/template/utils/vzpkg/2.7.0-18/src/%{name}-%{version}-18.tar.bz2
+# Source0-md5:	3ce22962f7b1c82252948e7365ebc89f
 URL:		http://openvz.org/
 Requires:	coreutils
 Requires:	gawk
@@ -22,6 +23,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 OpenVZ template management tools are used for software installation
 inside Virtual Private Servers.
+
+%description -l pl.UTF-8
+Narzędzia do zarządzania szablonami OpenVZ, służące do instalacji
+oprogramowania wewnąrz wirtualnych serwerów prywatnych.
 
 %prep
 %setup -q -n %{name}-%{version}-%{release}
@@ -48,6 +53,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/functions
 %attr(755,root,root) %{_datadir}/%{name}/cache-os
 %attr(755,root,root) %{_datadir}/%{name}/myinit.*
-%{_mandir}/man8/vzpkgcache.8.*
-%{_mandir}/man8/vzyum.8.*
-%{_mandir}/man8/vzrpm.8.*
+%{_mandir}/man8/vzpkgcache.8*
+%{_mandir}/man8/vzyum.8*
+%{_mandir}/man8/vzrpm.8*
