@@ -18,6 +18,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # strip fails to strip pre-packaged binaries from different arch
+# TODO: use _noautostrip
 %define	no_install_post_strip	1
 
 %description
